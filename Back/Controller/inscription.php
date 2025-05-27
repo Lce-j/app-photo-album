@@ -7,10 +7,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $first_name = htmlspecialchars($_POST['prenom']);
     $email = htmlspecialchars($_POST['email']);
     $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT );
-    $is_admin= 'user';
+    $is_admin= '0';
     
-
-    $stmt = $bdLink->prepare("INSERT INTO utilisateur (nom, prenom, email, password, role) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $bdLink->prepare("INSERT INTO utilisateur (nom, prenom, email, password, is_admin) VALUES (?, ?, ?, ?, ?)");
     $stmt->bindParam(1, $name, PDO::PARAM_STR);
     $stmt->bindParam(2, $first_name, PDO::PARAM_STR);
     $stmt->bindParam(3, $email, PDO::PARAM_STR);

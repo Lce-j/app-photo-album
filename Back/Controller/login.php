@@ -3,6 +3,7 @@
 require "database.php";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $email = htmlspecialchars($_POST['email']);
     $query = "SELECT * FROM user WHERE email = :email";
 
     $stmt = $bdLink->prepare($query);
@@ -19,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $_SESSION['is_admin'] = $user['is_admin'];
         $_SESSION['status'] = 'success';
         $_SESSION['message'] = 'Vous vous êtes bien connecté.e !';
-        header("Location: index.php");
+        header("Location: C:\wamp64\www\app-photo-album\Front\View\home.html");
         
         exit();
     } else {
