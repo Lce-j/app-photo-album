@@ -1,6 +1,6 @@
 <?php
 
-require "database.php";
+require "C:\wamp64\www\app-photo-album\Back\Include\database.php";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $email = htmlspecialchars($_POST['email']);
