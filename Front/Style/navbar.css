@@ -1,0 +1,10 @@
+.navbar{
+    display: flex;
+    background-color: rgb(255, 191, 107);
+    align-items: center;
+    justify-content: space-around;
+}
+#title{
+    font-size: 2em;
+    font-weight: 1000;
+}

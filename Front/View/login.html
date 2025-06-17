@@ -1,12 +1,42 @@
+<link rel="stylsheet" href="../Style/login.css">
 <main>
-    <input id="email">Email</a>
-    <input id="password">Mot de passe</a>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-        <label class="form-check-label" for="checkDefault">
-            Se souvenir de moi ?
-        </label>
+    <div id="login" style="display: flex; flex-direction: column; align-items: center; background-color: rgb(96, 182, 235);">
+        <a>Email</a>
+        <input id="email">
+        <a>Mot de passe</a>
+        <input id="password">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+            <label class="form-check-label" for="checkDefault">
+                Se souvenir de moi ?
+            </label>
+        </div>
+        <a href="./home.html">Se Connecter</a>
+        <a href="./inscription.html" class="btn btn-primary">pas de compte ? S'inscrire</a>
     </div>
-    <button href="./home.html">Se Connecter</button>
-    <a href="./inscription.php" class="btn btn-primary">pas de compte ? S'inscrire</a>
 </main>
+<!-- 
+<link rel="stylesheet" href="./assets/login.css">
+
+<p class="errors"><? $error ?></p>
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<form action="" method="post" class="post">
+    <h3>Login Here</h3>
+
+    <input type="hidden" name="token" id="token" value="<?= $_SESSION['token'] ?>">
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" autofocus><br>
+
+    <label for="password">Mot de passe:</label><br>
+    <input type="password" id="password" name="password"><br>
+
+    <input type="submit" value="Connexion">
+
+    
+</form> -->
