@@ -58,16 +58,13 @@ if (isset($_SESSION['user'])) {
                 exit;
             }
 
-            $query = 'INSERT INTO users (id, first_name, last_name, email, password, avatar, birthday, promo_id, is_admin) VALUES (NULL, :first_name, :last_name, :email, :password, :avatar, :birthday, :promo_id, :is_admin)';
+            $query = 'INSERT INTO users (id, first_name, last_name, email, password, avatar, birthday, promo_id, is_admin) VALUES (NULL, :first_name, :last_name, :email, :password, :is_admin)';
             $response = $bdd->prepare($query);
             $response->execute([
                 'first_name' => $_POST['first_name'],
                 'last_name' => $_POST['last_name'],
                 'email' => $_POST['email'],
                 'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-                'avatar' => $imagePath,
-                'birthday' => $_POST['birthday'],
-                'promo_id' => $_POST['promo_id'],
                 'is_admin' => false
             ]);
 

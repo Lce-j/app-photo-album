@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content=""width=device-width, initial-scale="1">
+        <title>Album Photo | Connexion</title>
+        <link rel="stylesheet" href="../assets/css/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <main id="signin">
+            <form action="../../backend/controllers/signin.php" method="post" enctype="multipart/form-data" class="signin__form">
+                <div class="register-disp">
+                    <label for="last-name" class="login-label">Nom</label>
+                    <input type="text" placeholder="Nom" name="last-name" class="register-input">
+                </div>
+                <div class="register-disp">
+                    <label for="first-name" class="register-label">Prenom</label>
+                    <input type="text" placeholder="Prenom" name="first-name" class="register-input">
+                </div>
+                <div class="register-disp">
+                    <label for="email" class="register-label">E-mail</label>
+                    <input type="email" placeholder="E-mail" name="email" class="register-input">
+                </div>
+                <div class="register-disp">
+                    <label for="password" class="register-label">Mot de passe</label>
+                    <input type="password" placeholder="Mot de passe" name="password" class="register-input">
+                </div>
+                <!-- <div class="register-disp">
+                    <label for="mdp" class="register-label">Confirmation du mot de passe</label>
+                    <input type="password" placeholder="Mot de passe" name="password" class="register-input">
+                </div> -->
+                <div class="register-disp">
+                    <input type="submit" class="register-submit" value ="S'enregistrer">
+                </div>
+                    <div class="signin__form__signup">
+                    <a href="./signup.html" class="btn btn-primary">Déjà un compte ? Se connecter</a>
+                </div>
+            </form>    
+        </main>
+    </body>
+</html>
+
+
+    
