@@ -19,29 +19,25 @@ require_once('../../../backend/includes/database.php');
     <header id="header">
       <nav id="navbar">
         <div class="navbar__logo">
-          <img id="logo" src="../../../public/images/logo_album_photo.png" width="50px" height="50px">    
+          <a href="./show_album.php">
+            <img id="logo" src="../../../public/images/logo_album_photo.png" width="50px" height="50px">    
+          </a>
           <h1 id="title">Albopho</h1>
         </div>
-        <!-- <ul class="navbar__login">
-          <li>
-            <a href="./frontend/pages/signup.html">
-               <button type="button" class="btn btn-primary"><i class="fa-solid fa-user"></i> Deconnexion</button>
-            </a>
-          </li>
-        </ul> -->
       </nav>
     </header>
-    <main>
-      <?php 
-      $album = $bdd->query('SELECT * FROM album');
-      $photo = $bdd->query('SELECT * From photo WHERE album_id = album.id');
-      ?>
+    <main id="album">
       <button>Modifier</button>
       <button>Supprimer</button>
-      <h3><?php echo $album['title'];?> </h3>
-      <h4><?php echo $album['date']?></h4>
+      <?php 
+      $stmt = $bdd->query('SELECT * From photo');
+      foreach ($stmt as $photo) { ?>
+      
+      <img src="<?php echo $photo['path'];?>">
+      <!-- <h3><?php echo $photo['title'];?> </h3> -->
+      <h4><?php echo $photo['date']?></h4>
       <h4><?php echo $photo['place'];?></h4>
-        <button hrf="./partager.html" id="share">Partager</button>
+      <?php }?> 
       </div>
       <div class="modal" tabindex="-1">
         <div class="modal-dialog">

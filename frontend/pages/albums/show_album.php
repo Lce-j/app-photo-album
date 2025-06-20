@@ -41,12 +41,14 @@ require_once('../../../backend/includes/database.php');
     <header id="header">
       <nav id="navbar">
         <div class="navbar__logo">
-          <img
-            id="logo"
-            src="../../../public/images/logo_album_photo.png"
-            width="50px"
-            height="50px"
-          />
+          <a href="../../../index.html">
+            <img
+              id="logo"
+              src="../../../public/images/logo_album_photo.png"
+              width="50px"
+              height="50px"
+            />
+          </a>
           <h1 id="title">Albopho</h1>
         </div>
         <ul class="navbar__login">
