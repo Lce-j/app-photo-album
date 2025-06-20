@@ -1,3 +1,9 @@
 # app-photo-album
 
-# this project has the objectif to allow a user to create and share an album with other 
+# Ce projet est une application web permettant de créer un album photo et de le partager avec d'autre utilisateurs
+
+# Installation
+# copier le repo git:  https://github.com/Lce-j/app-photo-album.git
+# importer la database
+# lancer WAMP/XAMP
+# ouvrir une fenetre navigateur et rentrer: localhost/app-photo-album
