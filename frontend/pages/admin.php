@@ -24,9 +24,6 @@ $user = $_SESSION['user'];
                     <h1 id="title">Albopho</h1>
                 </div>
                 <ul class="navbar__login">
-                    <!-- <li>
-                        <?php if ($user['is_admin'] === 1) { echo "<a href=''>Espace administrateur</a>"; } ?>
-                    </li> -->
                     <li src="../pages/dashboard.php">
                         <button type="submit" class="btn btn-primary" name="update-profil">Retour sur dashboard</button> 
                     </li>
@@ -40,6 +37,15 @@ $user = $_SESSION['user'];
             <div id="tableau">
                 <h3>Listes des utilisateurs</h3>
                 <ul id="users">
+                    <?php 
+                        $stmt = $bdd->query('SELECT * FROM user');
+                        foreach ($stmt as $user) {?>
+                            <li>
+                            <?php echo $user['last_name'] . $user['first_name']; ?>
+                            <button type="submit" class="btn btn-danger" name="delete-profil">Supprimer l'utilisateur</button>
+                            <button type="submit" class="btn btn-primary" name="update-profil">Voir le profil</button>
+                    </li>
+                       <?php }?>
                     <li>
                         <?php echo $user['last_name'] . $user['first_name']; ?>
                         <button type="submit" class="btn btn-danger" name="delete-profil">Supprimer l'utilisateur</button>
@@ -48,9 +54,19 @@ $user = $_SESSION['user'];
                 </ul>
             </div>
         </main>
-        <footer id="footer">
-            <a href="http://" target="_blank" rel="noopener noreferrer">Projet de fin d'année</a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">&copy; Lucie Josse | 2024-2025</a>
+        <footer id="footer" style="background-color: rgb(96, 182, 235);">
+            <a
+                href="https://github.com/Lce-j/app-photo-album"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Projet de fin d'année</a
+            >
+            <a
+                href="https://linkedin.com/in/josse-lucie"
+                target="_blank"
+                rel="noopener noreferrer"
+                >&copy; Lucie Josse | 2024-2025</a
+            >
         </footer>
     </body>
 </html>

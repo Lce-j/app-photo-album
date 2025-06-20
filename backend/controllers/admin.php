@@ -1,10 +1,5 @@
 <?php
 
-//voir son nombre d'album, album partagé
-//create user
-
-// session_start();
-
 if (isset($_SESSION['user'])) {
 
     if ($_SESSION['user']['is_admin'] == true) {
@@ -28,24 +23,20 @@ if (isset($_SESSION['user'])) {
             exit();
         }
     } else {
-        // REDIRECTION VERS PAGE D'ACCUEIL SI PAS LES PERMS
         header("Location: http://localhost/app-photo-album/frontend/pages/dashboard.php");
         exit;
     }
 } else {
-    // REDIRECTION VERS PAGE D'ACCUEIL SI PAS DE SESSION
     header("Location: http://localhost/app-photo-album/");
     exit;
 }
 
 
-//delete user
 if (isset($_SESSION['user'])) {
     if ($_SESSION['user']['is_admin'] == 1) {
         if (isset($delete_button)) {
             $stmt = $bdd->prepare('DELETE FROM user WHERE id = :id');
             $stmt->bindParam(':id', $id);
-            // $stmt->bindValue(':id', $id);
             $stmt->execute();
         }
         header("Location: http://localhost/app-photo-album/frontend/pages/admin.php");

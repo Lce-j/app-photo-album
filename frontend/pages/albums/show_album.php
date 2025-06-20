@@ -75,11 +75,10 @@ require_once('../../../backend/includes/database.php');
               <p class="card-text"><?php echo $album['date']?></p>
               <a href="http://localhost/app-photo-album/frontend/pages/albums/show_album_id.php" class="btn btn-primary" >Voir</a>
             </div>
-            <!-- <?php echo $album['id'];?> -->
           </div>
        <?php }?> 
     </main>
-    <footer id="footer">
+    <footer id="footer" style="background-color: rgb(96, 182, 235);">
       <a
         href="https://github.com/Lce-j/app-photo-album"
         target="_blank"

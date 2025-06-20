@@ -34,7 +34,6 @@ require_once('../../../backend/includes/database.php');
       foreach ($stmt as $photo) { ?>
       
       <img src="<?php echo $photo['path'];?>">
-      <!-- <h3><?php echo $photo['title'];?> </h3> -->
       <h4><?php echo $photo['date']?></h4>
       <h4><?php echo $photo['place'];?></h4>
       <?php }?> 
@@ -58,9 +57,19 @@ require_once('../../../backend/includes/database.php');
         </div>
       </div>
     </main>
-    <footer id="footer">
-            <a href="http://" target="_blank" rel="noopener noreferrer">Projet de fin d'année</a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">&copy; Lucie Josse | 2024-2025</a>
-        </footer>
+    <footer id="footer" style="background-color: rgb(96, 182, 235);">
+      <a
+        href="https://github.com/Lce-j/app-photo-album"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Projet de fin d'année</a
+      >
+      <a
+        href="https://linkedin.com/in/josse-lucie"
+        target="_blank"
+        rel="noopener noreferrer"
+        >&copy; Lucie Josse | 2024-2025</a
+      >
+    </footer>
   </body>
 </html>

@@ -49,6 +49,11 @@ $user = $_SESSION['user'] ?? null;
                     ?>
                 </h3>
             </div>
+            <div>
+                <a href="./albums/show_album.php" >
+                    <button type="button" class="btn btn-primary">Voir les albums</button>
+                </a>
+            </div>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -84,9 +89,19 @@ $user = $_SESSION['user'] ?? null;
                 </div>
             </div>
         </main>
-        <footer id="footer">
-            <a href="http://" target="_blank" rel="noopener noreferrer">Projet de fin d'année</a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">&copy; Lucie Josse | 2024-2025</a>
+        <footer id="footer" style="background-color: rgb(96, 182, 235);">
+            <a
+                href="https://github.com/Lce-j/app-photo-album"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Projet de fin d'année</a
+            >
+            <a
+                href="https://linkedin.com/in/josse-lucie"
+                target="_blank"
+                rel="noopener noreferrer"
+                >&copy; Lucie Josse | 2024-2025</a
+            >
         </footer>
     </body>
 </html>
