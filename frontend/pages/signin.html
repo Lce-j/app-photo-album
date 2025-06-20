@@ -11,29 +11,39 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body>
+         <header id="header">
+            <nav id="navbar">
+                <div class="navbar__logo">
+                    <a href="../../index.html">
+                        <img id="logo" src="../../public/images/logo_album_photo.png" width="50px" height="50px"></img>
+                    </a>
+                    <h1 id="title">Albopho</h1>
+                </div>
+            </nav>
+        </header>
         <main id="signin">
             <form action="../../backend/controllers/signin.php" method="post" enctype="multipart/form-data" class="signin__form">
                 <div class="register-disp">
-                    <label for="last-name" class="login-label">Nom</label>
+                    <label for="last-name" class="signin__register-label">Nom</label>
                     <input type="text" placeholder="Nom" name="last-name" class="register-input">
                 </div>
-                <div class="register-disp">
-                    <label for="first-name" class="register-label">Prenom</label>
+                <div class="signin__register-disp">
+                    <label for="first-name" class="signin__register-label">Prenom</label>
                     <input type="text" placeholder="Prenom" name="first-name" class="register-input">
                 </div>
-                <div class="register-disp">
-                    <label for="email" class="register-label">E-mail</label>
+                <div class="signin__register-disp">
+                    <label for="email" class="signin__register-label">E-mail</label>
                     <input type="email" placeholder="E-mail" name="email" class="register-input">
                 </div>
-                <div class="register-disp">
-                    <label for="password" class="register-label">Mot de passe</label>
+                <div class="signin__register-disp">
+                    <label for="password" class="signin__register-label">Mot de passe</label>
                     <input type="password" placeholder="Mot de passe" name="password" class="register-input">
                 </div>
                 <!-- <div class="register-disp">
                     <label for="mdp" class="register-label">Confirmation du mot de passe</label>
                     <input type="password" placeholder="Mot de passe" name="password" class="register-input">
                 </div> -->
-                <div class="register-disp">
+                <div class="signin__register-disp">
                     <input type="submit" class="register-submit" value ="S'enregistrer">
                 </div>
                     <div class="signin__form__signup">

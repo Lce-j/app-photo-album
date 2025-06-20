@@ -1,10 +1,15 @@
+<?php
+session_start();
+require_once('../../../backend/includes/database.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content=""width=device-width, initial-scale="1">
     <title>Album Photo | Tableau de bord</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -14,46 +19,28 @@
     <header id="header">
       <nav id="navbar">
         <div class="navbar__logo">
-          <img id="logo" src="../../public/images/logo_album_photo.png"></img>            <h1 id="title">Albopho</h1>
+          <img id="logo" src="../../../public/images/logo_album_photo.png" width="50px" height="50px">    
+          <h1 id="title">Albopho</h1>
         </div>
-        <ul class="navbar__login">
+        <!-- <ul class="navbar__login">
           <li>
             <a href="./frontend/pages/signup.html">
                <button type="button" class="btn btn-primary"><i class="fa-solid fa-user"></i> Deconnexion</button>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </nav>
     </header>
     <main>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Modifié</button>
-      <button href="./partager.html">Partager</button>
-      <h3>Title</h3>
+      <?php 
+      $album = $bdd->query('SELECT * FROM album');
+      $photo = $bdd->query('SELECT * From photo WHERE album_id = album.id');
+      ?>
+      <button>Modifier</button>
       <button>Supprimer</button>
-      <h4>Date</h4>
-      <h4>Lieu</h4>
-      <img src="...">
-      <img src="...">
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      <h3><?php echo $album['title'];?> </h3>
+      <h4><?php echo $album['date']?></h4>
+      <h4><?php echo $photo['place'];?></h4>
         <button hrf="./partager.html" id="share">Partager</button>
       </div>
       <div class="modal" tabindex="-1">
@@ -76,8 +63,8 @@
       </div>
     </main>
     <footer id="footer">
-      <a href="http://" target="_blank" rel="noopener noreferrer">Projet de fin d'année</a>
-      <a href="http://" target="_blank" rel="noopener noreferrer">&copy; Lucie Josse | 2024-2025</a>
-    </footer>
+            <a href="http://" target="_blank" rel="noopener noreferrer">Projet de fin d'année</a>
+            <a href="http://" target="_blank" rel="noopener noreferrer">&copy; Lucie Josse | 2024-2025</a>
+        </footer>
   </body>
 </html>

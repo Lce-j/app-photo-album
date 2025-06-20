@@ -1,10 +1,15 @@
+<?php
+session_start();
+require_once('../../../backend/includes/database.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="" width="device-width," initial-scale="1" />
     <title>Album Photo | Accueil</title>
-    <link rel="stylesheet" href="./frontend/assets/css/styles.css" />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -38,7 +43,7 @@
         <div class="navbar__logo">
           <img
             id="logo"
-            src="./public/images/logo_album_photo.png"
+            src="../../../public/images/logo_album_photo.png"
             width="50px"
             height="50px"
           />
@@ -46,7 +51,7 @@
         </div>
         <ul class="navbar__login">
           <li>
-            <a href="./frontend/pages/signup.html">
+            <a href="../signup.html">
               <button type="button" class="btn btn-primary">
                 <i class="fa-solid fa-user"></i>
               </button>
@@ -55,22 +60,22 @@
         </ul>
       </nav>
     </header>
-    <main id="home">
-      <h2 class="home__title">Album Photo</h2>
-      <h4 class="home__subtitle">
-        Composer et partager tous vos souvenir avec votre famille et amis. Que
-        se soit des vacances ou bien même les années passées, votre album vous
-        permet de vous commémorer les lieux et moments clé.
-      </h4>
-      <div class="home__container">
-        <a
-          href="./frontend/pages/signup.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Composer votre album !</a
-        >
-        <a href="./frontend/pages/albums/show_album.php">Voir les albums !</a>
-      </div>
+    <main id="album">
+      <?php
+        $stmt = $bdd->query('SELECT * FROM album');
+        foreach ($stmt as $album) { ?>
+          <div class="card" style="width: 18rem;">
+            <img src="#" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                <?php echo $album['title'];?> 
+              </h5>
+              <p class="card-text"><?php echo $album['date']?></p>
+              <a href="http://localhost/app-photo-album/frontend/pages/albums/show_album_id.php" class="btn btn-primary" >Voir</a>
+            </div>
+            <!-- <?php echo $album['id'];?> -->
+          </div>
+       <?php }?> 
     </main>
     <footer id="footer">
       <a
